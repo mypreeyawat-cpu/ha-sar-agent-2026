@@ -79,7 +79,7 @@ if check_password():
 
         # ประมวลผลด้วย Gemini
         with st.chat_message("assistant"):
-            model = genai.GenerativeModel("gemini-1.5-pro", system_instruction=system_instruction)
+            model = genai.GenerativeModel("gemini-3.1-pro", system_instruction=system_instruction)
             
             # จัดเตรียม History ส่งให้ Gemini
             history = [{'role': 'user' if m['role']=='user' else 'model', 'parts': [m['content']]} for m in st.session_state.messages[:-1]]
